@@ -4,6 +4,7 @@ var appStarter = require('../engine');
 
 appStarter.init();
 
+//NASTY WORKAROUND -> 4 RAP
 setTimeout(function(){
 	var app = appStarter.getApplication();
 

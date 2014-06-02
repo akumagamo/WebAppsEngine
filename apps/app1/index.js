@@ -11,3 +11,27 @@ router.get(matchPath, function(req, res) {
 	 
 	
 module.exports = router;
+
+
+/*
+
+var http = require('http');
+var fs = require('fs');
+var ENCODING = "utf8";
+var FILENAME = "";
+
+http.createServer(function (req, res) {
+  fs.readFile(FILENAME, ENCODING ,function(err, data){
+	if(err != null || data!=req.connection.remoteAddress) {
+		fs.writeFile(FILENAME, req.connection.remoteAddress, ENCODING, 
+		{flags: 'w'}, function(){
+			res.end("NEW");
+		});
+	}else{
+		res.end("OLD");
+	}
+	res.writeHead(200, {'Content-Type': 'text/plain'});
+  });
+}).listen(8080);
+
+*/

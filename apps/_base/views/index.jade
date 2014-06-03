@@ -1,0 +1,25 @@
+extends layout
+
+block content
+	h1= title
+	p #{body}
+	pre 
+		|  +-+ /apps
+		|  | +-+ /_base
+		|  | | +-+ /views
+		|  | | | +-+ index.jade
+		|  | | | +-+ layout.jade
+		|  | | +- index.js
+		|  | +-+ ... other apps ...
+		|  +-+ /bin
+		|  | +- www_engine 
+		|  +-+ /node_modules
+		|  | + ... 
+		|  +-+ /public
+		|  | + ... 
+		|  +-+ /routes
+		|  | + ... 
+		|  +-+ /views
+		|  | + ... 
+		|  +-- /enginge.js
+		|  +-- /package.json

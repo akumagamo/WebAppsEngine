@@ -1,9 +1,9 @@
 {
-  "name": "test",
-  "version": "0.0.1",
+  "name": "AppsEngine",
+  "version": "0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www_engine"
   },
   "dependencies": {
     "express": "~4.2.0",

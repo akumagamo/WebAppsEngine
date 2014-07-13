@@ -9,7 +9,7 @@ var connectionString = "postgres://servicePostgres:postGres@localhost/nodetest";
 
 function logLastRequest(req, res, next, request){
 		
-	pg.connection(connectionString, function(err, client, done){
+	pg.connect(connectionString, function(err, client, done){
 		client,query("insert into logged_requests (request) values($1);", request,function(err, result){
 			if(err != null)
 				next(err);
@@ -37,19 +37,6 @@ router.all(matchPath + "*/lastquery", function(req, res, next) {
 });
 
 router.all(matchPath + "*", function(req, res, next) {
-	var properties = [];
-	for(var name in req.query){
-		properties.push(req[name]||"unknown property: \""+ name + "\"");
-	}
-	if(properties.length==0){
-		properties.push(req);
-	}
-	console.info(properties);
-	
-	console.info("--------------------");
-	
-	console.info(req.body);
-	
 	logLastRequest(req, res, next, req.body)
 });
 	 

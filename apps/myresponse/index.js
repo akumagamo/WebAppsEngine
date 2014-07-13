@@ -1,17 +1,19 @@
 var express = require('express');
 var router = express.Router();
 
-var path  = __dirname.split("\\");
+var path  = __dirname.split("/");
 var matchPath = "/" + path.slice(path.length-2).join("/");
 
-var fs = require('fs');
-var util = require('util');
-var ENCODING = "utf8";
-var FILENAME = __dirname + "/last-query.txt";
+var pg = require('pg');
+var connectionString = "postgres://servicePostgres:postGres@localhost/nodetest";
 
-function logLastRequest(req, res, next, properties){
-	fs.writeFile(FILENAME, util.inspect(properties), ENCODING, {flags: 'w'}, 
-		function(err){
+function logLastRequest(req, res, next, request){
+
+		
+pg.connection(connectionString, function(err, client, done){
+
+
+client,query("insert into logged_request (request) values($1);", request,function(err, result){
 			if(err != null)
 				next(err);
 			else{
@@ -20,8 +22,13 @@ function logLastRequest(req, res, next, properties){
 	});
 }
 router.all(matchPath + "*/lastquery", function(req, res, next) {
-	fs.readFile(FILENAME, ENCODING ,function(err, data){
-		if(err == null && data!="") {
+		
+pg.connect(connectionString,function(err, client, done){
+
+client.query("select request from logged_requests order by updatetime desc LIMIT 1",[],function(err, result){
+data = result.rows[0].request;
+
+if(err == null && data!="") {
 			res.end(data);
 		}
 		else{

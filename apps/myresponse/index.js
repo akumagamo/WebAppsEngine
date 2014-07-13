@@ -13,7 +13,7 @@ function logLastRequest(req, res, next, request){
 pg.connection(connectionString, function(err, client, done){
 
 
-client,query("insert into logged_request (request) values($1);", request,function(err, result){
+client,query("insert into logged_requests (request) values($1);", request,function(err, result){
 			if(err != null)
 				next(err);
 			else{
@@ -26,9 +26,9 @@ router.all(matchPath + "*/lastquery", function(req, res, next) {
 pg.connect(connectionString,function(err, client, done){
 
 client.query("select request from logged_requests order by updatetime desc LIMIT 1",[],function(err, result){
-data = result.rows[0].request;
+	data = result.rows[0].request;
 
-if(err == null && data!="") {
+	if(err == null && data!="") {
 			res.end(data);
 		}
 		else{
@@ -36,6 +36,7 @@ if(err == null && data!="") {
 		}
 	});
 });
+
 router.all(matchPath + "*", function(req, res, next) {
 	var properties = [];
 	for(var name in req.query){
@@ -45,7 +46,12 @@ router.all(matchPath + "*", function(req, res, next) {
 		properties.push(req);
 	}
 	console.info(properties);
-	logLastRequest(req, res, next, properties)
+	
+	console.info("--------------------");
+	
+	console.info(req.body);
+	
+	logLastRequest(req, res, next, req.body)
 });
 	 
 module.exports = router;

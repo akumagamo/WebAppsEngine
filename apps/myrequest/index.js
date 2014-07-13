@@ -42,7 +42,7 @@ router.all(matchPath + "*/allrequests", function(req, res, next) {
 			if(err == null) {
 				var message = "";
 				for(var idx = 0; idx < result.rows.length;idx++){
-					message += result.rows[idx] + ", ";
+					message += result.rows[idx].request + ", ";
 				}
 				if(message.length>3){
 					message = message.substr(0, message.length-2);

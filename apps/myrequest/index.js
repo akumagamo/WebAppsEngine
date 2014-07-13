@@ -5,7 +5,7 @@ var path  = __dirname.split("/");
 var matchPath = "/" + path.slice(path.length-2).join("/");
 
 var pg = require('pg');
-var connectionString = "postgres://servicePostgres:postGres@localhost/nodetest";
+var connectionString = require("/apps/shared-config.js").connectionString;
 
 function logLastRequest(req, res, next, request){
 		

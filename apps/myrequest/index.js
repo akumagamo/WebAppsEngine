@@ -10,7 +10,7 @@ var connectionString = "postgres://servicePostgres:postGres@localhost/nodetest";
 function logLastRequest(req, res, next, request){
 		
 	pg.connect(connectionString, function(err, client, done){
-		client.query("insert into logged_requests (request) values($1);", request,function(err, result){
+		client.query("insert into logged_requests (request) values($1);", [request],function(err, result){
 			if(err != null)
 				next(err);
 			else{

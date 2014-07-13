@@ -6,11 +6,12 @@ var matchPath = "/" + path.slice(path.length-2).join("/");
 
 var pg = require('pg');
 var connectionString = require("../shared-config.js").connectionString;
+var DB_QUERY_SELECT = "SELECT request FROM logged_requests ORDER BY updatetime DESC LIMIT 1";
+var DB_QUERY_INSERT = "INSERT INTO logged_requests (request) VALUES($1);";
 
 function logLastRequest(req, res, next, request){
-		
 	pg.connect(connectionString, function(err, client, done){
-		client.query("insert into logged_requests (request) values($1);", [request],function(err, result){
+		client.query(DB_QUERY_INSERT, [request],function(err, result){
 			if(err != null)
 				next(err);
 			else{
@@ -20,10 +21,8 @@ function logLastRequest(req, res, next, request){
 	});
 }
 router.all(matchPath + "*/lastquery", function(req, res, next) {
-		
 	pg.connect(connectionString, function(err, client, done){
-
-		client.query("select request from logged_requests order by updatetime desc LIMIT 1",[],function(err, result){
+		client.query(DB_QUERY_SELECT, function(err, result){
 			data = result.rows[0].request;
 
 			if(err == null && data!="") {

@@ -6,7 +6,7 @@ var matchPath = "/" + path.slice(path.length-2).join("/");
 
 
 var pg = require('pg');
-var connectionString = "postgres://servicePostgres:postGres@localhost/nodetest";
+var connectionString = require("../shared-config.js").connectionString;
 
 router.get(matchPath, function(req, res) {
 	res.writeHead(200, {'Content-Type': 'text/plain'});

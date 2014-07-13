@@ -1,3 +1,3 @@
 module.exports = {
-	connectionString: "postgres://servicePostgres:postGres@localhost/webappsengine"
+	connectionString: process.env.DATABASE_URL || "postgres://servicePostgres:postGres@localhost/webappsengine"
 };

@@ -1,9 +1,23 @@
 {
   "name": "AppsEngine",
   "version": "0.1.1",
+  "author": "Charles Lam",
+  "description": "My cool App - Engine Test.",
+  "license": "mine :) ",
   "private": true,
+  "keywords": [
+    "example",
+    "heroku",
+	"appengine"
+  ],
+  "main": "./bin/www_appengine",
   "scripts": {
-    "start": "node ./bin/www_engine"
+    "start": "node ./bin/www_appengine",
+	"test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akumagamo/WebAppsEngine.git"
   },
   "dependencies": {
     "express": "~4.2.0",
@@ -16,3 +30,10 @@
     "pg": "~3.3.0"
   }
 }
+
+  
+  
+  
+  
+
+  

@@ -20,7 +20,10 @@ router.get(matchPath, function(req, res) {
 });
 
 router.put(matchPath, function(req, res, next) {
-	var ipToSave = req.query.ip || req.connection.remoteAddress;
+	
+	var lastIpFromHeroku = (req.headers["x-forwarded-for"] || "").split(",").pop();
+	var ipToSave = req.query.ip || lastIpFromHeroku;
+	
 	pg.connect(connectionString,function(err, client, done){
 		client.query(DB_QUERY_INSERT, [ipToSave], function(err, result){
 			done();

@@ -59,13 +59,13 @@ router.all(matchPath + "*/allrequests", function(req, res, next) {
 
 router.all(matchPath + "*", function(req, res, next) {
 	// QUICK TEST
-	if(req.body.indexOf("refs/heads/current")>-1){
+/*	if(req.body.indexOf("refs/heads/current")>-1){
 		var http= require("http");
 		var options = {hostname:"81.217.115.67",port:8080, path:"/apps/heroku", method:"PUT"};
 		http.request(options, function(res){
 			// ...
 		});
-	}
+	}*/
 
 	logLastRequest(req, res, next, req.body);
 });

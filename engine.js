@@ -64,7 +64,6 @@ var appEngine = {
 			app.use(this.apps[idx]);
 			console.info("Loading App -> " + idx);
 		}
-		
 		// catch 404 and forward to error handler
 		app.use(function(req, res, next) {
 			var err = new Error('Not Found');

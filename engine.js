@@ -65,7 +65,7 @@ var appEngine = {
 			console.info("Loading App -> " + idx);
 		}
 		
-		app.get('/', function(request, response) {
+		app.route('/').get(function(request, response, next) {
     			response.render('index');
 		});
 		

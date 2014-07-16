@@ -65,6 +65,10 @@ var appEngine = {
 			console.info("Loading App -> " + idx);
 		}
 		
+		app.get('/', function(request, response) {
+    			response.render('index');
+		});
+		
 		// catch 404 and forward to error handler
 		app.use(function(req, res, next) {
 			var err = new Error('Not Found');

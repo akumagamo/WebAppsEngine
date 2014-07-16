@@ -48,10 +48,12 @@ var appEngine = {
 	},
 	createExpressApp:function (){
 		var app = express();
-
+		
 		app.set('env', process.env.APP_ENGINE_ENV);
 		app.set('views', path.join(__dirname, 'views'));
 		app.set('view engine', 'jade');
+
+		app.use(app.router);
 
 		app.use(favicon());
 		app.use(logger('dev'));

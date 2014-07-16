@@ -3,7 +3,10 @@ var debug = require('debug')('test');
 var appEngine = require('../engine');
 
 appEngine.onAppsLoaded(
+
 function(app){
+
+console.info(process.env.PORT);
 	app.set('port', process.env.PORT || 8080);
 	var server = app.listen(app.get('port'), function() {
 	  debug('Express server listening on port ' + server.address().port);

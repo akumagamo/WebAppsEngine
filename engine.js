@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var routes_index = require('./routes/index');
+
 var appEngine = {
 	apps:[],
 	appsToLoad: 0,
@@ -53,8 +55,6 @@ var appEngine = {
 		app.set('views', path.join(__dirname, 'views'));
 		app.set('view engine', 'jade');
 
-		app.use(app.router);
-
 		app.use(favicon());
 		app.use(logger('dev'));
 		app.use(bodyParser.json());
@@ -67,9 +67,7 @@ var appEngine = {
 			console.info("Loading App -> " + idx);
 		}
 		
-		app.get('/', function(req, res, next) {
-    			res.render('index');
-		});
+		app.use('/', routes_index);
 		
 		// catch 404 and forward to error handler
 		app.use(function(req, res, next) {

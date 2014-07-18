@@ -72,8 +72,6 @@ router.all(matchPath + "*", function(req, res, next) {
 	}else{
 		logLastRequest(req, res, next, req.body);	
 	}
-
-	
 });
 
 module.exports = router;

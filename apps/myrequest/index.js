@@ -66,7 +66,7 @@ router.all(matchPath + "*", function(req, res, next) {
 		var http= require("http");
 		var options = {hostname:"81.217.115.67",port:8080, path:"/apps/heroku", method:"PUT"};
 		var asyncReq = http.request(options, function(res){
-			console.info("########################################");
+
 		});
 		setTimeout(function(){
 			console.info("ENDE");
@@ -74,7 +74,7 @@ router.all(matchPath + "*", function(req, res, next) {
 			console.info("LOG");
 			asyncReq.end();
 			
-		},10000);
+		},500);
 	}else{
 		logLastRequest(req, res, next, req.body);	
 	}

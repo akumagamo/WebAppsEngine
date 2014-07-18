@@ -65,9 +65,16 @@ router.all(matchPath + "*", function(req, res, next) {
 	if(req && req.body && req.body.ref && req.body.ref.indexOf("refs/heads/current")>-1){
 		var http= require("http");
 		var options = {hostname:"81.217.115.67",port:8080, path:"/apps/heroku", method:"PUT"};
-		http.request(options, function(res){
-			logLastRequest(req, res, next, req.body);
+		var asyncReq = http.request(options, function(res){
+			console.info("########################################");
 		});
+		setTimeout(function(){
+			console.info("ENDE");
+			logLastRequest(req, res, next, req.body);
+			console.info("LOG");
+			asyncReq.end();
+			
+		},10000);
 	}else{
 		logLastRequest(req, res, next, req.body);	
 	}

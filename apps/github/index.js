@@ -7,7 +7,7 @@ var path  = __dirname.split("/");
 var matchPath = "/" + path.slice(path.length-2).join("/");
 var viewBasePath = ".." + matchPath + "/views";
 
-router.get(matchPath + "?*", function(req, res, next) {
+router.get(matchPath + "/:repo", function(req, res, next) {
 	var repoName = req.params["repo"];
 	console.info(repoName);
 	if(repoName){

@@ -7,7 +7,7 @@ var path  = __dirname.split("/");
 var matchPath = "/" + path.slice(path.length-2).join("/");
 var viewBasePath = ".." + matchPath + "/views";
 
-router.get(matchPath + "/:repo", function(req, res, next) {
+router.post(matchPath + "/:repo", function(req, res, next) {
 	var repoName = req.params["repo"];
 	console.info(repoName);
 	if(repoName){
@@ -18,6 +18,8 @@ router.get(matchPath + "/:repo", function(req, res, next) {
 				forwardRequest.end();
 				res.end("Y");
 			},500);
+		}else{
+			res.end("N");
 		}
 	}else{
 		res.end("N");

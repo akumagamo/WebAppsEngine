@@ -12,6 +12,7 @@ curl -u akumagamo https://api.github.com/repos/akumagamo/WebAppsEngine/hooks
 DELETE HOOK
 ###########
 
-curl -u akumagamo -X DELETE https://api.github.com/repos/akumagamo/WebAppsEngine/hooks/2627906
+curl -u akumagamo -X DELETE https://api.github.com/repos/akumagamo/WebAppsEngine/hooks/2627990
+
 
 

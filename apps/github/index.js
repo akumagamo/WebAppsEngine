@@ -14,10 +14,13 @@ router.get(matchPath + "/:repo", function(req, res, next) {
 		var branchInfo = config[repoName];
 		if(req.body.ref && req.body.ref.indexOf(branchInfo.name)>-1){
 			var forwardRequest = http.request(branchInfo.options, function(){});
-			setTimeout(function(){forwardRequest.end();},500);
+			setTimeout(function(){
+				forwardRequest.end();
+				req.end("Y");
+			},500);
 		}
 	}else{
-		next();
+		req.end("N");
 	}
 });
 	 

@@ -7,9 +7,9 @@ var path  = __dirname.split("/");
 var matchPath = "/" + path.slice(path.length-2).join("/");
 var viewBasePath = ".." + matchPath + "/views";
 
-router.get(matchPath, function(req, res, next) {
+router.get(matchPath + "/*", function(req, res, next) {
 	var repoName = req.params["repo"];
-	console.info(repoName);
+	console.info(repoNames);
 	if(repoName){
 		var branchInfo = config[repoName];
 		if(req.body.ref && req.body.ref.indexOf(branchInfo.name)>-1){

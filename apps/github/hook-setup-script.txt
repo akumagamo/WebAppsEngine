@@ -1,0 +1,17 @@
+CREATE HOOK
+###########
+curl -u akumagamo -d '{"name": "web", "active": true,"events":["push"],"config": {"url": "http://github-requests.herokuapp.com/apps/github?repo=webappsengine", "content_type": "json"}}' https://api.github.com/repos/akumagamo/WebAppsEngine/hooks
+
+
+LIST HOOKS
+##########
+
+curl -u akumagamo https://api.github.com/repos/akumagamo/WebAppsEngine/hooks
+
+
+DELETE HOOK
+###########
+
+curl -u akumagamo -X DELETE https://api.github.com/repos/akumagamo/WebAppsEngine/hooks/2627906
+
+

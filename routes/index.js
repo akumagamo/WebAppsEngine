@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
+var pjson = require('../package.json');
+
 /* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+router.get("/", function(req, res) {
+  res.render("index", { title: "Base Welcome Page", version: pjson.version });
 });
 
 module.exports = router;

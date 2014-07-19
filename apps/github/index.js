@@ -16,11 +16,11 @@ router.get(matchPath + "/:repo", function(req, res, next) {
 			var forwardRequest = http.request(branchInfo.options, function(){});
 			setTimeout(function(){
 				forwardRequest.end();
-				req.end("Y");
+				res.end("Y");
 			},500);
 		}
 	}else{
-		req.end("N");
+		res.end("N");
 	}
 });
 	 

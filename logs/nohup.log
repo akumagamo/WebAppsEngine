@@ -1,7 +1,10 @@
-
-/home/pi/programs/WebAppsEngine/engine.js:38
-			that.appsToLoad = files.length;
-			                       ^
-TypeError: Cannot read property 'length' of undefined
-    at /home/pi/programs/WebAppsEngine/engine.js:38:27
-    at Object.oncomplete (fs.js:107:15)
+Loading App -> /home/pi/programs/WebAppsEngine/apps/_base
+Loading App -> /home/pi/programs/WebAppsEngine/apps/github
+Loading App -> /home/pi/programs/WebAppsEngine/apps/heroku
+Loading App -> /home/pi/programs/WebAppsEngine/apps/myip
+Loading App -> /home/pi/programs/WebAppsEngine/apps/myrequest
+Loading App -> /home/pi/programs/WebAppsEngine/apps/sms
+AppsLoaded and Running
+Warning: missing space before text for line 5 of jade file "/home/pi/programs/WebAppsEngine/apps/sms/views/msg.jade"
+[90mGET /apps/sms [31m500 [90m10259ms - 696b[0m
+[90mGET /stylesheets/style.css [36m304 [90m85ms[0m

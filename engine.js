@@ -30,14 +30,12 @@ var appEngine = {
 	},
 	startLoading: function (){
 		var fs = require('fs');
-		var path = "./apps/";
+		var path = __dirname + "/apps/";
 		var that = this;
-		console.info(__dirname);
 		fs.readdir(path, function(){
 			var files = arguments[1];
 			that.appsToLoad = files.length;
 			for(var idx in files){
-			console.info(path + files[idx]);
 				fs.stat(path + files[idx], function(filePath){
 					return function(err, stat){
 						if(stat.isDirectory()){

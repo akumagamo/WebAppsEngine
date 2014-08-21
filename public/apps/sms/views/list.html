@@ -1,0 +1,20 @@
+<script>
+function deleteMessage(id){
+    $.ajax({
+      type: "DELETE",
+      url: "/messages/"+id,
+      data: null,
+      success: function(data){ console.info(data); }
+    });
+  }
+</script>
+<a href="#/new-message">New Message</a>
+<ul>
+  <li data-ng-repeat="message in messages">
+  {{message.id}}
+  {{message.phoneNumber}}
+  {{message.dateTime}}
+  {{message.message}}
+  <a href="#" data-ng-click="deleteMessage(message.id)">Delete</a>
+  </li>
+</ul>

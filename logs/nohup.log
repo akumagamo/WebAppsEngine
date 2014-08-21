@@ -1,0 +1,7 @@
+
+/home/pi/programs/WebAppsEngine/engine.js:38
+			that.appsToLoad = files.length;
+			                       ^
+TypeError: Cannot read property 'length' of undefined
+    at /home/pi/programs/WebAppsEngine/engine.js:38:27
+    at Object.oncomplete (fs.js:107:15)

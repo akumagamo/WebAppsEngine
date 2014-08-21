@@ -47,7 +47,7 @@ router.all(matchPath + "*/allrequests", function(req, res, next) {
 				if(message.length>3){
 					message = message.substr(0, message.length-2);
 				}
-					
+
 				res.end("[" + message + "]");
 			}
 			else{
@@ -58,7 +58,7 @@ router.all(matchPath + "*/allrequests", function(req, res, next) {
 })
 
 router.all(matchPath + "*", function(req, res, next) {
-	logLastRequest(req, res, next, req.body)
+	logLastRequest(req, res, next, req.body);	
 });
-	 
+
 module.exports = router;

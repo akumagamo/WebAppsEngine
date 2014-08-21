@@ -3,12 +3,17 @@ var router = express.Router();
 
 var path  = __dirname.split("/");
 var matchPath = "/" + path.slice(path.length-2).join("/");
+
+var cmdWorker = require("./cmdWorker.js");
+
 var viewBasePath = ".." + matchPath + "/views";
 
-router.get(matchPath, function(req, res) {
-	res.render(viewBasePath + "/index", {
-		title: "This is a Template for creating Apps",
-		body: "Here you can see the basic layout and structure of the AppsEngine Project."		
+router.put(matchPath, function(req, res) {
+	cmdWorker.do(function(body){
+		res.render(viewBasePath + "/index", {
+			title: "Mini Continuous Deployment Tool!",
+			body: body		
+		});
 	});
 });
 	 

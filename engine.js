@@ -32,6 +32,7 @@ var appEngine = {
 		var fs = require('fs');
 		var path = "./apps/";
 		var that = this;
+		console.info(__dirname);
 		fs.readdir(path, function(){
 			var files = arguments[1];
 			that.appsToLoad = files.length;

@@ -32,9 +32,10 @@ var appEngine = {
 		var fs = require('fs');
 		var path = "./apps/";
 		var that = this;
-		
+		console.info(path);
 		fs.readdir(path,function(){
 			var files = arguments[1];
+			console.info(arguments);
 			that.appsToLoad = files.length;
 			for(var idx in files){
 				fs.stat(path + files[idx], function(filePath){

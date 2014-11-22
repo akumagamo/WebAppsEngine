@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 node_modules/*
 logs/*
 tmp/*
+=======
+node_modules
+>>>>>>> ed78f963b0833d48b88c47c6d6de0c3c91efb998

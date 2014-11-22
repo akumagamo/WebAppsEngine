@@ -1,6 +1,7 @@
 var smsCommands = require("../bin/sms-connector").Commands;
 
 exports.list = function(req, res){
+        res.setHeader("Access-Control-Allow-Origin","*");
         smsCommands.readAllMessages(function(messages){
             res.json(messages);   
         });

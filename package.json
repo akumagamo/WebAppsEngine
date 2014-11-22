@@ -1,6 +1,6 @@
 {
   "name": "AppsEngine",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Charles Lam",
   "description": "My cool WebAppsEngine",
   "license": "mine :) ",
@@ -34,10 +34,3 @@
 	"node": "0.10.x"
   }
 }
-
-  
-  
-  
-  
-
-  

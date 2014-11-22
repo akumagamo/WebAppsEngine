@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= title + ' ' +  version
+  
+  ul
+   each item, index in applist
+     li= index + ' ' + item
+

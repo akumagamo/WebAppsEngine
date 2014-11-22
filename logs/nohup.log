@@ -5,11 +5,7 @@ Loading App -> /home/pi/programs/WebAppsEngine/apps/myip
 Loading App -> /home/pi/programs/WebAppsEngine/apps/myrequest
 Loading App -> /home/pi/programs/WebAppsEngine/apps/sms
 AppsLoaded and Running
-[90mGET /apps/sms/ [32m200 [90m10402ms - 353b[0m
-[90mGET /apps/sms/scripts/app.js [32m200 [90m136ms - 1.33kb[0m
-[90mGET /apps/sms/views/list.html [32m200 [90m52ms - 451b[0m
-[90mGET /apps/sms/messages [32m200 [90m756ms - 6.86kb[0m
-[90mGET /apps/myip [32m200 [90m392ms[0m
-[90mGET /apps/myrequest [32m200 [90m84ms[0m
-[90mGET /apps/myrequest/lastrequest [32m200 [90m170ms[0m
-[90mGET /apps/myrequest/lastquery [32m200 [90m118ms[0m
+[90mGET /info [32m200 [90m10411ms - 359b[0m
+[90mGET /stylesheets/style.css [36m304 [90m79ms[0m
+[90mGET /info [32m200 [90m739ms - 263b[0m
+[90mGET /stylesheets/style.css [36m304 [90m22ms[0m

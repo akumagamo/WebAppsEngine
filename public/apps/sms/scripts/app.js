@@ -1,4 +1,4 @@
-var baseServiceUrl = "/apps/sms/messages";
+var baseServiceUrl = "/apps/sms/messages/";
 
 var app = 
 	angular.module('app', ['ngRoute'])

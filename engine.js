@@ -1,3 +1,5 @@
+var global = require('./global-config.js');
+
 var express = require('express');
 var path = require('path');
 var favicon = require('static-favicon');
@@ -6,6 +8,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes_index = require('./routes/index');
+var routes_info = require('./routes/info');
 
 var appEngine = {
 	apps:[],
@@ -40,6 +43,7 @@ var appEngine = {
 					return function(err, stat){
 						if(stat.isDirectory()){
 							that.apps[filePath.replace(/\./,"")] = require(filePath + "/index");
+							global.appsNameList.push(filePath.replace(/\/.*\//gi,""));
 						}
 						that.appLoaded();
 					}
@@ -66,8 +70,9 @@ var appEngine = {
 			console.info("Loading App -> " + idx);
 		}
 		
-		app.use('/', routes_index);
-		
+//		app.use('/', routes_index);
+
+		app.use('/info', routes_info);
 		// catch 404 and forward to error handler
 		app.use(function(req, res, next) {
 			var err = new Error('Not Found');

@@ -8,6 +8,8 @@ var viewBasePath = ".." + matchPath + "/views";
 
 
 router.get(matchPath, function(req, res) {
+console.info("->");
+
 	res.render(viewBasePath + "/msg", {});
 });
 

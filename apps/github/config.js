@@ -1,6 +1,6 @@
 module.exports = {
 	"webappsengine":{
-		"name":"current",
+		"name":"release",
 		"options":{
 			"hostname":"81.217.115.67", 
 			"port":8080, 

@@ -1,8 +1,6 @@
-var express = require('express');
-var router = express.Router();
-
-var path  = __dirname.split("/");
-var matchPath = "/" + path.slice(path.length-2).join("/");
+var appsHelper = require('../apps-helper')(__dirname);
+var router = appsHelper.router;
+var matchPath = appsHelper.matchPath;
 
 var pg = require('pg');
 var connectionString = require("../shared-config.js").connectionString;

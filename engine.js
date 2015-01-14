@@ -55,6 +55,7 @@ var appEngine = {
 		var app = express();
 
 		app.set('env', process.env.APP_ENGINE_ENV);
+		app.disable('x-powered-by');
 		app.set('views', path.join(__dirname, 'views'));
 		app.set('view engine', 'jade');
 
@@ -64,19 +65,26 @@ var appEngine = {
 		app.use(bodyParser.urlencoded());
 		app.use(cookieParser());
 		app.use(express.static(path.join(__dirname, 'public')));
-
+		
+		app.use(function(req, res, next){
+			res.setHeader("Access-Control-Allow-Origin","*");
+			next();
+		});
+		
 		for(var idx in this.apps){
 			app.use(this.apps[idx]);
 			console.info("Loading App -> " + idx);
 		}
 		
-//		app.use('/', routes_index);
+		app.use('/', routes_index);
 
 		app.use('/info', routes_info);
 		// catch 404 and forward to error handler
 		app.use(function(req, res, next) {
-			var err = new Error('Not Found');
+			var msg = 'Not Found';
+			var err = new Error(msg);
 			err.status = 404;
+			err.title = msg;
 			next(err);
 		});
 
@@ -86,6 +94,7 @@ var appEngine = {
 		app.use(function(err, req, res, next) {
 			res.status(err.status || 500);
 			res.render('error',  {
+				title:err.title,
 				message: err.message,
 				error: (app.get('env') === 'development')?err:{}
 			});

@@ -1,15 +1,11 @@
-var express = require('express');
-var router = express.Router();
+var appsHelper = require('../apps-helper')(__dirname);
+var router = appsHelper.router;
+var matchPath = appsHelper.matchPath;
+var viewBasePath = appsHelper.viewBasePath;
+
 var messages = require('./routes/messages');
 
-var path  = __dirname.split("/");
-var matchPath = "/" + path.slice(path.length-2).join("/");
-var viewBasePath = ".." + matchPath + "/views";
-
-
 router.get(matchPath, function(req, res) {
-console.info("->");
-
 	res.render(viewBasePath + "/msg", {});
 });
 

@@ -1,5 +1,7 @@
 # Web Apps Engine
 ## Versionnumber 0.1.0 (2015-03-01) Alpha
+(***Documentation last update 2015-10-31 13:30***)  
+
 A Express-App, which houses serverall Mini Applications that are loaded on startup
 
 ## Features
@@ -14,7 +16,6 @@ none
     * removing apps from trunk / create seperate branch
     * create readme for all apps
     
-
 ## System Requirement & Prerequisits
  simply node.js installation
 
@@ -25,7 +26,7 @@ npm start
 Download Source from SourceLink and execute "npm install"
 
 ### SourceControl Link & Information
-git@github.com:akumagamo/WebAppsEngine.git
+https://github.com/akumagamo/WebAppsEngine.git
 
 ### Base Code Example
 

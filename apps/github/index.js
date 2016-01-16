@@ -15,6 +15,8 @@ router.post(matchPath + "/:repo", function(req, res, next) {
 console.info("0");
 console.info(req.body.ref);
 console.info("0.0");
+console.info(branchInfo);
+console.info(req.body.ref.indexOf(branchInfo.name));
 		if(req.body.ref && req.body.ref.indexOf(branchInfo.name)>-1){
 console.info("1");
 			var forwardRequest = http.request(branchInfo.options, function(){});

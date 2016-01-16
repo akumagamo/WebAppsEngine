@@ -1,5 +1,5 @@
 module.exports = {
-	"webappsengine":{
+	"node-app-portal":{
 		"name":"current",
 		"options":{
 			"hostname":"81.217.115.67", 

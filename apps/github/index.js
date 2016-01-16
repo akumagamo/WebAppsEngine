@@ -10,6 +10,7 @@ var viewBasePath = ".." + matchPath + "/views";
 router.post(matchPath + "/:repo", function(req, res, next) {
 	var repoName = req.params["repo"];
 	console.info(repoName);
+console.info(req.body);
 	if(repoName){
 		var branchInfo = config[repoName];
 		if(req.body.ref && req.body.ref.indexOf(branchInfo.name)>-1){

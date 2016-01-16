@@ -14,11 +14,14 @@ console.info(req.body);
 	if(repoName){
 		var branchInfo = config[repoName];
 		if(req.body.ref && req.body.ref.indexOf(branchInfo.name)>-1){
+console.info("1");
 			var forwardRequest = http.request(branchInfo.options, function(){});
+console.info("2");
 			setTimeout(function(){
 				forwardRequest.end();
 				res.end("Y");
 			},500);
+console.info("3");
 		}else{
 			res.end("N");
 		}

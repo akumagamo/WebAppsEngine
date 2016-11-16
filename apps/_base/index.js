@@ -1,9 +1,7 @@
-var express = require('express');
-var router = express.Router();
-
-var path  = __dirname.split("/");
-var matchPath = "/" + path.slice(path.length-2).join("/");
-var viewBasePath = ".." + matchPath + "/views";
+var appsHelper = require('../apps-helper')(__dirname);
+var router = appsHelper.router;
+var matchPath = appsHelper.matchPath;
+var viewBasePath = appsHelper.viewBasePath;
 
 router.get(matchPath, function(req, res) {
 	res.render(viewBasePath + "/index", {

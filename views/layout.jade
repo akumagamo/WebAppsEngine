@@ -2,6 +2,8 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    if !error
+      link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset="UTF-8")
   body
     block content

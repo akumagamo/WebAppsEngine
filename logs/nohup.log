@@ -1,0 +1,11 @@
+Loading App -> /home/pi/programs/WebAppsEngine/apps/_base
+Loading App -> /home/pi/programs/WebAppsEngine/apps/github
+Loading App -> /home/pi/programs/WebAppsEngine/apps/heroku
+Loading App -> /home/pi/programs/WebAppsEngine/apps/myip
+Loading App -> /home/pi/programs/WebAppsEngine/apps/myrequest
+Loading App -> /home/pi/programs/WebAppsEngine/apps/sms
+AppsLoaded and Running
+[90mGET /info [32m200 [90m10411ms - 359b[0m
+[90mGET /stylesheets/style.css [36m304 [90m79ms[0m
+[90mGET /info [32m200 [90m739ms - 263b[0m
+[90mGET /stylesheets/style.css [36m304 [90m22ms[0m

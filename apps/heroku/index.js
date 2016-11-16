@@ -1,12 +1,11 @@
-var express = require('express');
-var router = express.Router();
-
-var path  = __dirname.split("/");
-var matchPath = "/" + path.slice(path.length-2).join("/");
+var appsHelper = require('../apps-helper')(__dirname);
+var router = appsHelper.router;
+var matchPath = appsHelper.matchPath;
+var viewBasePath = appsHelper.viewBasePath;
 
 var cmdWorker = require("./cmdWorker.js");
 
-var viewBasePath = ".." + matchPath + "/views";
+
 
 router.put(matchPath, function(req, res) {
 	cmdWorker.do(function(body){
